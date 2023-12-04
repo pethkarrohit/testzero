@@ -1,0 +1,73 @@
+﻿declare @GeographicalId as bigint
+				
+	DECLARE EQ_cursor CURSOR FOR SELECT   GeographicalId  from App_Geographical  Where GeographicalLevel=4
+								--where  DATEDIFF(MINUTE,LastDataLogDateTime , GETDATE())/EquipmnetLogRate >3 and EquipmentOnlineStatus=0;
+	OPEN EQ_cursor;
+	FETCH NEXT FROM EQ_cursor into @GeographicalId ;
+	WHILE @@FETCH_STATUS = 0
+		BEGIN
+			
+			BEGIN
+
+				delete from App_Geographical where  GeographicalId=@GeographicalId
+				
+			END
+			FETCH NEXT FROM EQ_cursor into @GeographicalId;
+		END;
+	CLOSE EQ_cursor;
+	DEALLOCATE EQ_cursor;
+
+	update u
+set u.StateId = s.GeographicalId
+from CityTemp u
+    inner join App_Geographical s on
+        u.StateName = s.GeographicalName and S.GeographicalLevel=2
+
+
+
+		Insert into App_Geographical ( GeographicalId, GeographicalLevel, GroupId, GeographicalName, GeographicalCode, GeographicalDetails , RecordStatus, CreatedBy, ModifedBy)
+
+  Select distinct ROW_NUMBER() OVER(ORDER BY MT1.PostOffice ASC)+670 ,5,CityId,postoffice,pincode,'',0,'ADMINISTATOR' ,'ADMINISTATOR' from(
+  Select   * from(
+  Select * from Sheet1$  --Order by City
+ union all  Select * from Sheet2$ --Order by City
+   union all Select * from Sheet5$
+   )MT
+   Inner join CityTemp CM
+ ON rtrim(ltrim(MT.City))=rtrim(ltrim(CM.CityName))
+
+    )MT1
+--Select distinct ROW_NUMBER() OVER(ORDER BY PostOffice ASC) + 670,5,CityId,postoffice,pincode,'',0,'ADMINISTATOR' ,'ADMINISTATOR',CM.CityName from Sheet1$ T1 
+--Inner join CityTemp CM
+-- ON rtrim(ltrim(T1.City))=rtrim(ltrim(CM.CityName))
+-- Order by CityName
+
+-- Select * from CityTemp
+--  Order by CityName
+
+--  Select * from (
+--  Select * from Sheet1$
+-- union all  Select * from Sheet2$
+--   union all Select * from Sheet5$
+--   )MT
+   --where City like 'MUM'
+   -- Order by City
+  Select * from App_Geographical where GeographicalLevel=4
+   
+    
+
+
+	Test Card Details                            Failed card details
+
+VISA CREDIT CARD                                         VISA CREDIT CARD          
+Card No:	                     4111 1111 1111 1111  
+Exp:12/2020                                                      Exp:12/2020                                                        
+CVV:123                                                              CVV:123  
+
+ 
+  <add key="MERCHANT_KEY" value="xSCR0I" />
+    <add key="SALT" value="ccXiDgBZ" />
+    <add key="PAYU_BASE_URL" value="https://secure.payu.in" />
+    <add key="action" value="" />
+    <add key="hashSequence" value="key|txnid|amount|productinfo|firstname|email|udf1|udf2|udf3|udf4|udf5|udf6|udf7|udf8|udf9|udf10" />
+    <add key="AuthSignPath" value="https://lic.iprs.org/EmployeeImages/" />

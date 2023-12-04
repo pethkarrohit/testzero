@@ -1,0 +1,807 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Project ToolsVersion="12.0" DefaultTargets="Build" xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
+  <Import Project="..\packages\Microsoft.CodeDom.Providers.DotNetCompilerPlatform.1.0.0\build\Microsoft.CodeDom.Providers.DotNetCompilerPlatform.props" Condition="Exists('..\packages\Microsoft.CodeDom.Providers.DotNetCompilerPlatform.1.0.0\build\Microsoft.CodeDom.Providers.DotNetCompilerPlatform.props')" />
+  <Import Project="..\packages\Microsoft.Net.Compilers.4.2.0\build\Microsoft.Net.Compilers.props" Condition="Exists('..\packages\Microsoft.Net.Compilers.4.2.0\build\Microsoft.Net.Compilers.props')" />
+  <Import Project="$(MSBuildExtensionsPath)\$(MSBuildToolsVersion)\Microsoft.Common.props" Condition="Exists('$(MSBuildExtensionsPath)\$(MSBuildToolsVersion)\Microsoft.Common.props')" />
+  <PropertyGroup>
+    <Configuration Condition=" '$(Configuration)' == '' ">Debug</Configuration>
+    <Platform Condition=" '$(Platform)' == '' ">AnyCPU</Platform>
+    <ProductVersion>
+    </ProductVersion>
+    <SchemaVersion>2.0</SchemaVersion>
+    <ProjectGuid>{DAD1F508-B823-4D37-A4EA-9A07FF0784C4}</ProjectGuid>
+    <ProjectTypeGuids>{349c5851-65df-11da-9384-00065b846f21};{fae04ec0-301f-11d3-bf4b-00c04f79efbc}</ProjectTypeGuids>
+    <OutputType>Library</OutputType>
+    <AppDesignerFolder>Properties</AppDesignerFolder>
+    <RootNamespace>IPRS_Member</RootNamespace>
+    <AssemblyName>IPRS_Member</AssemblyName>
+    <TargetFrameworkVersion>v4.5.2</TargetFrameworkVersion>
+    <UseIISExpress>true</UseIISExpress>
+    <IISExpressSSLPort />
+    <IISExpressAnonymousAuthentication />
+    <IISExpressWindowsAuthentication />
+    <IISExpressUseClassicPipelineMode />
+    <UseGlobalApplicationHostFile />
+    <NuGetPackageImportStamp>
+    </NuGetPackageImportStamp>
+    <SccProjectName>
+    </SccProjectName>
+    <SccLocalPath>
+    </SccLocalPath>
+    <SccAuxPath>
+    </SccAuxPath>
+    <SccProvider>
+    </SccProvider>
+    <Use64BitIISExpress />
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Debug|AnyCPU' ">
+    <DebugSymbols>true</DebugSymbols>
+    <DebugType>full</DebugType>
+    <Optimize>false</Optimize>
+    <OutputPath>bin\</OutputPath>
+    <DefineConstants>DEBUG;TRACE</DefineConstants>
+    <ErrorReport>prompt</ErrorReport>
+    <WarningLevel>4</WarningLevel>
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Release|AnyCPU' ">
+    <DebugType>pdbonly</DebugType>
+    <Optimize>true</Optimize>
+    <OutputPath>bin\</OutputPath>
+    <DefineConstants>TRACE</DefineConstants>
+    <ErrorReport>prompt</ErrorReport>
+    <WarningLevel>4</WarningLevel>
+  </PropertyGroup>
+  <ItemGroup>
+    <Reference Include="AjaxControlToolkit">
+      <HintPath>..\..\..\IPRS\IPRS\bin\AjaxControlToolkit.dll</HintPath>
+    </Reference>
+    <Reference Include="itextsharp">
+      <HintPath>..\..\..\IPRS\IPRS\bin\itextsharp.dll</HintPath>
+    </Reference>
+    <Reference Include="Microsoft.AI.Agent.Intercept, Version=2.4.0.0, Culture=neutral, PublicKeyToken=31bf3856ad364e35, processorArchitecture=MSIL">
+      <HintPath>..\packages\Microsoft.ApplicationInsights.Agent.Intercept.2.4.0\lib\net45\Microsoft.AI.Agent.Intercept.dll</HintPath>
+    </Reference>
+    <Reference Include="Microsoft.AI.DependencyCollector, Version=2.21.0.429, Culture=neutral, PublicKeyToken=31bf3856ad364e35, processorArchitecture=MSIL">
+      <HintPath>..\packages\Microsoft.ApplicationInsights.DependencyCollector.2.21.0\lib\net452\Microsoft.AI.DependencyCollector.dll</HintPath>
+    </Reference>
+    <Reference Include="Microsoft.AI.PerfCounterCollector, Version=2.21.0.429, Culture=neutral, PublicKeyToken=31bf3856ad364e35, processorArchitecture=MSIL">
+      <HintPath>..\packages\Microsoft.ApplicationInsights.PerfCounterCollector.2.21.0\lib\net452\Microsoft.AI.PerfCounterCollector.dll</HintPath>
+    </Reference>
+    <Reference Include="Microsoft.AI.ServerTelemetryChannel, Version=2.21.0.429, Culture=neutral, PublicKeyToken=31bf3856ad364e35, processorArchitecture=MSIL">
+      <HintPath>..\packages\Microsoft.ApplicationInsights.WindowsServer.TelemetryChannel.2.21.0\lib\net452\Microsoft.AI.ServerTelemetryChannel.dll</HintPath>
+    </Reference>
+    <Reference Include="Microsoft.AI.Web, Version=2.21.0.429, Culture=neutral, PublicKeyToken=31bf3856ad364e35, processorArchitecture=MSIL">
+      <HintPath>..\packages\Microsoft.ApplicationInsights.Web.2.21.0\lib\net452\Microsoft.AI.Web.dll</HintPath>
+    </Reference>
+    <Reference Include="Microsoft.AI.WindowsServer, Version=2.21.0.429, Culture=neutral, PublicKeyToken=31bf3856ad364e35, processorArchitecture=MSIL">
+      <HintPath>..\packages\Microsoft.ApplicationInsights.WindowsServer.2.21.0\lib\net452\Microsoft.AI.WindowsServer.dll</HintPath>
+    </Reference>
+    <Reference Include="Microsoft.ApplicationInsights, Version=2.21.0.429, Culture=neutral, PublicKeyToken=31bf3856ad364e35, processorArchitecture=MSIL">
+      <HintPath>..\packages\Microsoft.ApplicationInsights.2.21.0\lib\net452\Microsoft.ApplicationInsights.dll</HintPath>
+    </Reference>
+    <Reference Include="Microsoft.AspNet.FriendlyUrls, Version=1.0.2.0, Culture=neutral, PublicKeyToken=31bf3856ad364e35, processorArchitecture=MSIL">
+      <HintPath>..\packages\Microsoft.AspNet.FriendlyUrls.Core.1.0.2\lib\net45\Microsoft.AspNet.FriendlyUrls.dll</HintPath>
+      <Private>True</Private>
+    </Reference>
+    <Reference Include="Microsoft.AspNet.TelemetryCorrelation, Version=1.0.8.0, Culture=neutral, PublicKeyToken=31bf3856ad364e35, processorArchitecture=MSIL">
+      <HintPath>..\packages\Microsoft.AspNet.TelemetryCorrelation.1.0.8\lib\net45\Microsoft.AspNet.TelemetryCorrelation.dll</HintPath>
+    </Reference>
+    <Reference Include="Microsoft.CodeDom.Providers.DotNetCompilerPlatform, Version=1.0.0.0, Culture=neutral, PublicKeyToken=31bf3856ad364e35, processorArchitecture=MSIL">
+      <HintPath>..\packages\Microsoft.CodeDom.Providers.DotNetCompilerPlatform.1.0.0\lib\net45\Microsoft.CodeDom.Providers.DotNetCompilerPlatform.dll</HintPath>
+      <Private>True</Private>
+    </Reference>
+    <Reference Include="Microsoft.CSharp" />
+    <Reference Include="Newtonsoft.Json, Version=13.0.0.0, Culture=neutral, PublicKeyToken=30ad4fe6b2a6aeed, processorArchitecture=MSIL">
+      <HintPath>..\packages\Newtonsoft.Json.13.0.3\lib\net45\Newtonsoft.Json.dll</HintPath>
+    </Reference>
+    <Reference Include="System.Buffers, Version=4.0.3.0, Culture=neutral, PublicKeyToken=cc7b13ffcd2ddd51, processorArchitecture=MSIL">
+      <HintPath>..\packages\System.Buffers.4.5.1\lib\netstandard1.1\System.Buffers.dll</HintPath>
+    </Reference>
+    <Reference Include="System.Configuration.Install" />
+    <Reference Include="System.Diagnostics.DiagnosticSource, Version=5.0.0.0, Culture=neutral, PublicKeyToken=cc7b13ffcd2ddd51, processorArchitecture=MSIL">
+      <HintPath>..\packages\System.Diagnostics.DiagnosticSource.5.0.0\lib\net45\System.Diagnostics.DiagnosticSource.dll</HintPath>
+    </Reference>
+    <Reference Include="System.IO.Compression" />
+    <Reference Include="System.Management" />
+    <Reference Include="System.Memory, Version=4.0.1.2, Culture=neutral, PublicKeyToken=cc7b13ffcd2ddd51, processorArchitecture=MSIL">
+      <HintPath>..\packages\System.Memory.4.5.5\lib\netstandard1.1\System.Memory.dll</HintPath>
+    </Reference>
+    <Reference Include="System.Net" />
+    <Reference Include="System.Net.Http" />
+    <Reference Include="System.Net.Http.Extensions, Version=2.2.29.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a, processorArchitecture=MSIL">
+      <HintPath>..\packages\System.Net.Http.Formatting.Extension.5.2.3.0\lib\System.Net.Http.Extensions.dll</HintPath>
+      <Private>True</Private>
+    </Reference>
+    <Reference Include="System.Net.Http.Formatting, Version=5.2.3.0, Culture=neutral, PublicKeyToken=31bf3856ad364e35, processorArchitecture=MSIL">
+      <HintPath>..\packages\System.Net.Http.Formatting.Extension.5.2.3.0\lib\System.Net.Http.Formatting.dll</HintPath>
+      <Private>True</Private>
+    </Reference>
+    <Reference Include="System.Net.Http.Primitives, Version=4.2.29.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a, processorArchitecture=MSIL">
+      <HintPath>..\packages\System.Net.Http.Formatting.Extension.5.2.3.0\lib\System.Net.Http.Primitives.dll</HintPath>
+      <Private>True</Private>
+    </Reference>
+    <Reference Include="System.Runtime.Caching" />
+    <Reference Include="System.Runtime.CompilerServices.Unsafe, Version=5.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a, processorArchitecture=MSIL">
+      <HintPath>..\packages\System.Runtime.CompilerServices.Unsafe.5.0.0\lib\net45\System.Runtime.CompilerServices.Unsafe.dll</HintPath>
+    </Reference>
+    <Reference Include="System.Web.DynamicData" />
+    <Reference Include="System.Web.Entity" />
+    <Reference Include="System.Web.ApplicationServices" />
+    <Reference Include="System.ComponentModel.DataAnnotations" />
+    <Reference Include="System" />
+    <Reference Include="System.Data" />
+    <Reference Include="System.Core" />
+    <Reference Include="System.Data.DataSetExtensions" />
+    <Reference Include="System.Web.Extensions" />
+    <Reference Include="System.Xml.Linq" />
+    <Reference Include="System.Drawing" />
+    <Reference Include="System.Web" />
+    <Reference Include="System.Xml" />
+    <Reference Include="System.Configuration" />
+    <Reference Include="System.Web.Services" />
+    <Reference Include="System.EnterpriseServices" />
+  </ItemGroup>
+  <ItemGroup>
+    <Content Include="ApplicationError.aspx" />
+    <Content Include="App_Data\Query.txt" />
+    <Content Include="App_Reports\ApplicationForm_Rpt.aspx" />
+    <Content Include="App_Updates\App_Accounts_List_AccountCode.sql" />
+    <Content Include="App_Updates\App_Accounts_List_Bank_IPM.sql" />
+    <Content Include="App_Updates\App_Accounts_List_Deceased.sql" />
+    <Content Include="App_Updates\App_Accounts_List_IPM.sql" />
+    <Content Include="App_Updates\App_Accounts_List_RefAccountId.sql" />
+    <Content Include="App_Updates\App_Accounts_Login_IPM.sql" />
+    <Content Include="App_Updates\App_Accounts_Manage_Bank_IPM.sql" />
+    <Content Include="App_Updates\App_Accounts_Manage_IPM.sql" />
+    <Content Include="App_Updates\App_Accounts_Manage_MV_IPM.sql" />
+    <Content Include="App_Updates\App_Accounts_Nominee_Delete.sql" />
+    <Content Include="App_Updates\App_Accounts_Nominee_List.sql" />
+    <Content Include="App_Updates\App_Accounts_Nominee_Manage.sql" />
+    <Content Include="App_Updates\App_Accounts_Nominee_Update.sql" />
+    <Content Include="App_Updates\App_Accounts_Temp_List.sql" />
+    <Content Include="App_Updates\App_Accounts_Temp_Manage.sql" />
+    <Content Include="App_Updates\App_Accounts_ValidateLegelHire.sql" />
+    <Content Include="App_Updates\App_Country_List.sql" />
+    <Content Include="App_Updates\App_Currency_List.sql" />
+    <Content Include="App_Updates\App_Language_List.sql" />
+    <Content Include="App_Updates\CurrencyData.sql" />
+    <Content Include="App_Updates\MemberRoleType_LookUp_Populate_IPM.sql" />
+    <Content Include="App_Updates\Relase_R1_0\App_Accounts_List_AccountCode.sql" />
+    <Content Include="App_Updates\Relase_R1_0\App_Accounts_List_Bank_IPM.sql" />
+    <Content Include="App_Updates\Relase_R1_0\App_Accounts_List_Deceased.sql" />
+    <Content Include="App_Updates\Relase_R1_0\App_Accounts_List_IPM.sql" />
+    <Content Include="App_Updates\Relase_R1_0\App_Accounts_List_RefAccountId.sql" />
+    <Content Include="App_Updates\Relase_R1_0\App_Accounts_Login_IPM.sql" />
+    <Content Include="App_Updates\Relase_R1_0\App_Accounts_Manage_Bank_IPM.sql" />
+    <Content Include="App_Updates\Relase_R1_0\App_Accounts_Manage_IPM.sql" />
+    <Content Include="App_Updates\Relase_R1_0\App_Accounts_Manage_MV_IPM.sql" />
+    <Content Include="App_Updates\Relase_R1_0\App_Accounts_Nominee_Delete.sql" />
+    <Content Include="App_Updates\Relase_R1_0\App_Accounts_Nominee_List.sql" />
+    <Content Include="App_Updates\Relase_R1_0\App_Accounts_Nominee_Manage.sql" />
+    <Content Include="App_Updates\Relase_R1_0\App_Accounts_Nominee_Update.sql" />
+    <Content Include="App_Updates\Relase_R1_0\App_Accounts_Temp_List.sql" />
+    <Content Include="App_Updates\Relase_R1_0\App_Accounts_Temp_Manage.sql" />
+    <Content Include="App_Updates\Relase_R1_0\App_Accounts_ValidateLegelHire.sql" />
+    <Content Include="App_Updates\Relase_R1_0\App_Country_List.sql" />
+    <Content Include="App_Updates\Relase_R1_0\App_Currency_List.sql" />
+    <Content Include="App_Updates\Relase_R1_0\App_Language_List.sql" />
+    <Content Include="App_Updates\Relase_R1_0\CurrencyData.sql" />
+    <Content Include="App_Updates\Relase_R1_0\MemberRoleType_LookUp_Populate_IPM.sql" />
+    <Content Include="App_Updates\Release_R2_1\App_Accounts_Deceased_List.sql" />
+    <Content Include="App_Updates\Release_R2_1\App_Accounts_Doc_ListData_IPM.sql" />
+    <Content Include="App_Updates\Release_R2_1\App_Accounts_List_IPM.sql" />
+    <Content Include="App_Updates\Release_R2_1\App_Accounts_List_IPM_Rpt.sql" />
+    <Content Include="App_Updates\Release_R2_1\App_Accounts_List_SocietyName.sql" />
+    <Content Include="App_Updates\Release_R2_1\App_Accounts_Manage_Bank_IPM.sql" />
+    <Content Include="App_Updates\Release_R2_1\App_Accounts_Manage_IPM.sql" />
+    <Content Include="App_Updates\Release_R2_1\App_Accounts_Manage_MV_IPM.sql" />
+    <Content Include="App_Updates\Release_R2_1\App_Accounts_Mobile_List.sql" />
+    <Content Include="App_Updates\Release_R2_1\App_Accounts_Temp_Manage.sql" />
+    <Content Include="App_Updates\Release_R2_1\App_Accounts_Update_TraderName.sql" />
+    <Content Include="App_Updates\Release_R2_1\App_Accounts_ValidateLegelHire.sql" />
+    <Content Include="App_Updates\Release_R2_1\App_Accounts_ValidateProfile_IPMEXE.sql" />
+    <Content Include="App_Updates\Release_R2_1\App_Country_List.sql" />
+    <Content Include="App_Updates\Release_R2_1\App_Currency_List.sql" />
+    <Content Include="App_Updates\Release_R2_1\App_RefAccounts_List_AccountCode.sql" />
+    <Content Include="App_Updates\Release_R2_1\App_Society_List.Sql" />
+    <Content Include="App_Updates\Release_R2_1\GetStateBookId.sql" />
+    <Content Include="App_Updates\Release_R2_1\Release_R2_0.sql" />
+    <Content Include="App_Updates\Release_R2_1\ScriptAlterTable.sql" />
+    <Content Include="bin\IPRS_Member.dll" />
+    <Content Include="bin\IPRS_Member.pdb" />
+    <Content Include="bin\Microsoft.AspNet.FriendlyUrls.dll" />
+    <Content Include="CompanyLogo\IprsLogo.png" />
+    <Content Include="DSIT\1.txt" />
+    <Content Include="DSIT\Application_Error.xml" />
+    <Content Include="EmployeeImages\1.jpg" />
+    <Content Include="EmployeeImages\13.png" />
+    <Content Include="EmployeeImages\15.png" />
+    <Content Include="EmployeeImages\22.png" />
+    <Content Include="FileDelete.aspx" />
+    <Content Include="FileDownload.aspx" />
+    <Content Include="FileService.asmx" />
+    <Content Include="ForgotPassword.aspx" />
+    <Content Include="Home.aspx" />
+    <Content Include="Images\cheque-locate-ifsc-micr-code.png" />
+    <Content Include="Images\company-icon.png" />
+    <Content Include="Images\credit-debit-card.png" />
+    <Content Include="Images\DD-Cheque.png" />
+    <Content Include="Images\error.png" />
+    <Content Include="Images\file_add.png" />
+    <Content Include="Images\IFSC.png" />
+    <Content Include="Images\facebook.png" />
+    <Content Include="Images\Instagram.png" />
+    <Content Include="Images\Linkin.png" />
+    <Content Include="Images\twitter.png" />
+    <Content Include="Images\individual-icon.png" />
+    <Content Include="Images\info.png" />
+    <Content Include="Images\list-okay.png" />
+    <Content Include="Images\loader-SM.gif" />
+    <Content Include="Images\Pdf.png" />
+    <Content Include="Images\photo.png" />
+    <Content Include="Images\processing-data.gif" />
+    <Content Include="Images\Processing-Report-Please-Wait.gif" />
+    <Content Include="Images\review.png" />
+    <Content Include="Images\rs-symbol.png" />
+    <Content Include="Images\saving.gif" />
+    <Content Include="Images\select.png" />
+    <Content Include="Images\submit-application.png" />
+    <Content Include="Images\tutorial.jpg" />
+    <Content Include="Images\User.png" />
+    <Content Include="Images\update-address.png" />
+    <Content Include="Images\update-bank-info.png" />
+    <Content Include="Images\update-basic-info.png" />
+    <Content Include="Images\update-gst-info.png" />
+    <Content Include="Images\update-profile.png" />
+    <Content Include="Images\Youtube.png" />
+    <Content Include="Information.aspx" />
+    <Content Include="Javascript\FCalender.js" />
+    <Content Include="JpegImage.aspx" />
+    <Content Include="MemberRegDocs\photo.png" />
+    <Content Include="MemberRegWorkDocs\MWN_1211_10022_prathmesh.png" />
+    <Content Include="MemberVerification.aspx" />
+    <Content Include="MemberWelcome.aspx" />
+    <Content Include="packages.config" />
+    <Content Include="ApplicationInsights.config">
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+    </Content>
+    <Content Include="App_Browsers\chrome.browser" />
+    <Content Include="App_Browsers\ie.browser" />
+    <Content Include="App_Browsers\PageStateAdapter.browser" />
+    <Content Include="bin\ApplicationInsights.config" />
+    <Content Include="bin\roslyn\Microsoft.CSharp.Core.targets" />
+    <Content Include="bin\roslyn\Microsoft.VisualBasic.Core.targets" />
+    <Content Include="bin\roslyn\VBCSCompiler.exe.config" />
+    <Content Include="ApplicationMember.Master" />
+    <Content Include="PaymentRequest.aspx" />
+    <Content Include="PaymentResponse.aspx" />
+    <Content Include="Response.aspx" />
+    <Content Include="Style\font-awesome\font-awesome.css.map" />
+    <Content Include="Style\fonts\fontawesome-webfont.eot" />
+    <Content Include="Style\fonts\fontawesome-webfont.ttf" />
+    <Content Include="Style\fonts\fontawesome-webfont.woff" />
+    <Content Include="Style\fonts\fontawesome-webfont.woff2" />
+    <Content Include="Style\fonts\FontAwesome.otf" />
+    <Content Include="AppDocs\Member Application Form.pdf" />
+    <Content Include="GetHostPath.aspx" />
+    <Content Include="AppDocs\MANDATORY_DOCUMENTS.pdf" />
+    <Content Include="AppDocs\User_Guide.pdf" />
+    <Content Include="Filehandler.ashx" />
+    <Content Include="Style\modalPopup.css" />
+    <Content Include="UpdateAddressDetails.aspx" />
+    <Content Include="UpdateBankInfo.aspx" />
+    <Content Include="UpdateBasicInfo.aspx" />
+    <Content Include="UpdateGSTDetails.aspx" />
+    <Content Include="UpdateNomineeDetails.aspx" />
+    <Content Include="User_Controls\UCDocUpload.ascx" />
+    <Content Include="User_Controls\ucMemberChangePassword.ascx" />
+    <Content Include="User_Controls\ucNomineeDetails.ascx" />
+    <Content Include="ViewSwitcher.ascx" />
+    <Content Include="WebForm2.aspx" />
+    <Content Include="bin\IPRS_Member.dll.config" />
+    <Content Include="WebForm3.aspx" />
+    <None Include="Properties\PublishProfiles\IPRS_Member.pubxml" />
+    <Content Include="UserDocs\MANDATORYDOCUMENTS.pdf" />
+    <Content Include="UserDocs\UserGuide.pdf" />
+    <None Include="Web.Debug.config">
+      <DependentUpon>Web.config</DependentUpon>
+    </None>
+    <None Include="Web.Release.config">
+      <DependentUpon>Web.config</DependentUpon>
+    </None>
+  </ItemGroup>
+  <ItemGroup>
+    <Content Include="App_Reports\App_CheckList.aspx" />
+    <Content Include="bin\AjaxControlToolkit.dll" />
+    <Content Include="bin\itextsharp.dll" />
+    <Content Include="bin\Microsoft.AI.Agent.Intercept.dll" />
+    <Content Include="bin\Microsoft.AI.DependencyCollector.dll" />
+    <Content Include="bin\Microsoft.AI.PerfCounterCollector.dll" />
+    <Content Include="bin\Microsoft.AI.ServerTelemetryChannel.dll" />
+    <Content Include="bin\Microsoft.AI.Web.dll" />
+    <Content Include="bin\Microsoft.AI.WindowsServer.dll" />
+    <Content Include="bin\Microsoft.ApplicationInsights.dll" />
+    <Content Include="bin\Microsoft.CodeDom.Providers.DotNetCompilerPlatform.dll" />
+    <Content Include="bin\roslyn\csc.exe" />
+    <Content Include="bin\roslyn\Microsoft.Build.Tasks.CodeAnalysis.dll" />
+    <Content Include="bin\roslyn\Microsoft.CodeAnalysis.CSharp.dll" />
+    <Content Include="bin\roslyn\Microsoft.CodeAnalysis.dll" />
+    <Content Include="bin\roslyn\Microsoft.CodeAnalysis.VisualBasic.dll" />
+    <Content Include="bin\roslyn\System.Collections.Immutable.dll" />
+    <Content Include="bin\roslyn\System.Reflection.Metadata.dll" />
+    <Content Include="bin\roslyn\vbc.exe" />
+    <Content Include="bin\roslyn\VBCSCompiler.exe" />
+    <Content Include="Default.aspx" />
+    <Content Include="Global.asax" />
+    <Content Include="Images\AnimatedProgressBar.gif" />
+    <Content Include="Images\header.jpg" />
+    <Content Include="Images\help-icon.png" />
+    <Content Include="Images\Login_App_BG.jpg" />
+    <Content Include="Images\logo.png" />
+    <Content Include="Images\Section_Under_Construction.jpg" />
+    <Content Include="Javascript\bootstrap-colorpicker.min.js" />
+    <Content Include="Javascript\bootstrap-wysiwyg.min.js" />
+    <Content Include="Javascript\bootstrap\bootbox.min.js" />
+    <Content Include="Javascript\bootstrap\bootstrap-progressbar.js" />
+    <Content Include="Javascript\bootstrap\bootstrap-progressbar.min.js" />
+    <Content Include="Javascript\bootstrap\bootstrap.js" />
+    <Content Include="Javascript\bootstrap\bootstrap.min.js" />
+    <Content Include="Javascript\bootstrap\npm.js" />
+    <Content Include="Javascript\custom.js" />
+    <Content Include="Javascript\custom.min.js" />
+    <Content Include="Javascript\daterangepicker.js" />
+    <Content Include="Javascript\Dropdown\chosen.jquery.js" />
+    <Content Include="Javascript\Dropdown\jquery.min.js" />
+    <Content Include="Javascript\fastclick\fastclick.js" />
+    <Content Include="Javascript\GridView\buttons.bootstrap.js" />
+    <Content Include="Javascript\GridView\buttons.bootstrap.min.js" />
+    <Content Include="Javascript\GridView\buttons.flash.js" />
+    <Content Include="Javascript\GridView\buttons.flash.min.js" />
+    <Content Include="Javascript\GridView\buttons.html5.js" />
+    <Content Include="Javascript\GridView\buttons.html5.min.js" />
+    <Content Include="Javascript\GridView\buttons.print.js" />
+    <Content Include="Javascript\GridView\buttons.print.min.js" />
+    <Content Include="Javascript\GridView\dataTables.bootstrap.js" />
+    <Content Include="Javascript\GridView\dataTables.bootstrap.min.js" />
+    <Content Include="Javascript\GridView\dataTables.fixedHeader.js" />
+    <Content Include="Javascript\GridView\dataTables.fixedHeader.min.js" />
+    <Content Include="Javascript\GridView\dataTables.keyTable.js" />
+    <Content Include="Javascript\GridView\dataTables.keyTable.min.js" />
+    <Content Include="Javascript\GridView\dataTables.responsive.js" />
+    <Content Include="Javascript\GridView\dataTables.responsive.min.js" />
+    <Content Include="Javascript\GridView\dataTables.scroller.js" />
+    <Content Include="Javascript\GridView\dataTables.scroller.min.js" />
+    <Content Include="Javascript\GridView\jquery.dataTables.js" />
+    <Content Include="Javascript\GridView\jquery.dataTables.min.js" />
+    <Content Include="Javascript\GridView\jszip.js" />
+    <Content Include="Javascript\GridView\jszip.min.js" />
+    <Content Include="Javascript\GridView\pdfmake.js" />
+    <Content Include="Javascript\GridView\pdfmake.min.js" />
+    <Content Include="Javascript\GridView\vfs_fonts.js" />
+    <Content Include="Javascript\icheck.js" />
+    <Content Include="Javascript\icheck.min.js" />
+    <Content Include="Javascript\ion.rangeSlider.min.js" />
+    <Content Include="Javascript\jquery.hotkeys.js" />
+    <Content Include="Javascript\jquery.tagsinput.js" />
+    <Content Include="Javascript\jquery\jquery.js" />
+    <Content Include="Javascript\jquery\jquery.min.js" />
+    <Content Include="Javascript\Masking\jquery.inputmask.bundle.min.js" />
+    <Content Include="Javascript\moment.min.js" />
+    <Content Include="Javascript\nprogress.js" />
+    <Content Include="Javascript\prettify.js" />
+    <Content Include="Javascript\ResponsiveGrid\footable.min.js" />
+    <Content Include="Javascript\select2.full.min.js" />
+    <Content Include="Javascript\switchery.min.js" />
+    <Content Include="Javascript\Wizard\jquery-1.4.2.min.js" />
+    <Content Include="Javascript\Wizard\jquery.smartWizard.js" />
+    <Content Include="MemberChangePassword.aspx" />
+    <Content Include="MemberLogin.aspx" />
+    <Content Include="MemberLogout.aspx" />
+    <Content Include="MemberRegistration.aspx" />
+    <Content Include="scripts\ai.0.22.9-build00167.js" />
+    <Content Include="scripts\ai.0.22.9-build00167.min.js" />
+    <Content Include="Style\bootstrap-progressbar-3.3.4.css" />
+    <Content Include="Style\bootstrap-progressbar-3.3.4.min.css" />
+    <Content Include="Style\bootstrap.min.css" />
+    <Content Include="Style\custom.css" />
+    <Content Include="Style\custom.min.css" />
+    <Content Include="Style\daterangepicker.css" />
+    <Content Include="Style\Dropdown\chosen.css" />
+    <Content Include="Style\Dropdown\select2.min.css" />
+    <Content Include="Style\font-awesome\font-awesome.css" />
+    <Content Include="Style\font-awesome\font-awesome.min.css" />
+    <Content Include="Style\fonts\fontawesome-webfont.svg" />
+    <Content Include="Style\GridView\buttons.bootstrap.css" />
+    <Content Include="Style\GridView\buttons.bootstrap.min.css" />
+    <Content Include="Style\GridView\dataTables.bootstrap.css" />
+    <Content Include="Style\GridView\dataTables.bootstrap.min.css" />
+    <Content Include="Style\GridView\fixedHeader.bootstrap.css" />
+    <Content Include="Style\GridView\fixedHeader.bootstrap.min.css" />
+    <Content Include="Style\GridView\responsive.bootstrap.css" />
+    <Content Include="Style\GridView\responsive.bootstrap.min.css" />
+    <Content Include="Style\GridView\scroller.bootstrap.css" />
+    <Content Include="Style\GridView\scroller.bootstrap.min.css" />
+    <Content Include="Style\LoadingDiv.css" />
+    <Content Include="Style\nprogress.css" />
+    <Content Include="Style\prettify.min.css" />
+    <Content Include="Style\ResponsiveGrid\footable.min.css" />
+    <Content Include="Style\skins\flat\aero%402x.png" />
+    <Content Include="Style\skins\flat\aero.css" />
+    <Content Include="Style\skins\flat\aero.png" />
+    <Content Include="Style\skins\flat\blue%402x.png" />
+    <Content Include="Style\skins\flat\blue.css" />
+    <Content Include="Style\skins\flat\blue.png" />
+    <Content Include="Style\skins\flat\flat%402x.png" />
+    <Content Include="Style\skins\flat\flat.css" />
+    <Content Include="Style\skins\flat\flat.png" />
+    <Content Include="Style\skins\flat\green%402x.png" />
+    <Content Include="Style\skins\flat\green.css" />
+    <Content Include="Style\skins\flat\green.png" />
+    <Content Include="Style\skins\flat\grey%402x.png" />
+    <Content Include="Style\skins\flat\grey.css" />
+    <Content Include="Style\skins\flat\grey.png" />
+    <Content Include="Style\skins\flat\orange%402x.png" />
+    <Content Include="Style\skins\flat\orange.css" />
+    <Content Include="Style\skins\flat\orange.png" />
+    <Content Include="Style\skins\flat\pink%402x.png" />
+    <Content Include="Style\skins\flat\pink.css" />
+    <Content Include="Style\skins\flat\pink.png" />
+    <Content Include="Style\skins\flat\purple%402x.png" />
+    <Content Include="Style\skins\flat\purple.css" />
+    <Content Include="Style\skins\flat\purple.png" />
+    <Content Include="Style\skins\flat\red%402x.png" />
+    <Content Include="Style\skins\flat\red.css" />
+    <Content Include="Style\skins\flat\red.png" />
+    <Content Include="Style\skins\flat\yellow%402x.png" />
+    <Content Include="Style\skins\flat\yellow.css" />
+    <Content Include="Style\skins\flat\yellow.png" />
+    <Content Include="Style\skins\flat\_all.css" />
+    <Content Include="Style\starrr.css" />
+    <Content Include="Style\switchery.min.css" />
+    <Content Include="Style\zcCalendar.css" />
+    <Content Include="UpdateProfile.aspx" />
+    <Content Include="User_Controls\PopulateDropDown.asmx" />
+    <Content Include="User_Controls\PopulateDropDown.js" />
+    <Content Include="User_Controls\ucDropDown.ascx" />
+    <Content Include="User_Controls\ucMemberLogin.ascx" />
+    <Content Include="User_Controls\ucTooltip.ascx" />
+    <Content Include="Web.config">
+      <SubType>Designer</SubType>
+    </Content>
+  </ItemGroup>
+  <ItemGroup>
+    <Compile Include="ApplicationError.aspx.cs">
+      <DependentUpon>ApplicationError.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="ApplicationError.aspx.designer.cs">
+      <DependentUpon>ApplicationError.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="ApplicationMember.Master.cs">
+      <DependentUpon>ApplicationMember.Master</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="ApplicationMember.Master.designer.cs">
+      <DependentUpon>ApplicationMember.Master</DependentUpon>
+    </Compile>
+    <Compile Include="App_Code\ApplicationForm.cs" />
+    <Compile Include="App_Code\CaptchaImage.cs" />
+    <Compile Include="App_Code\clsDocumentHeaderFooter.cs" />
+    <Compile Include="App_Code\EmailConfig.cs" />
+    <Compile Include="App_Code\IFSC_Data.cs" />
+    <Compile Include="App_Reports\ApplicationForm_Rpt.aspx.cs">
+      <DependentUpon>ApplicationForm_Rpt.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="App_Reports\ApplicationForm_Rpt.aspx.designer.cs">
+      <DependentUpon>ApplicationForm_Rpt.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="App_Start\RouteConfig.cs" />
+    <Compile Include="Default.aspx.cs">
+      <DependentUpon>Default.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="FileDelete.aspx.cs">
+      <DependentUpon>FileDelete.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="FileDelete.aspx.designer.cs">
+      <DependentUpon>FileDelete.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="FileDownload.aspx.cs">
+      <DependentUpon>FileDownload.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="FileDownload.aspx.designer.cs">
+      <DependentUpon>FileDownload.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="Filehandler.ashx.cs">
+      <DependentUpon>Filehandler.ashx</DependentUpon>
+    </Compile>
+    <Compile Include="FileService.asmx.cs">
+      <DependentUpon>FileService.asmx</DependentUpon>
+      <SubType>Component</SubType>
+    </Compile>
+    <Compile Include="ForgotPassword.aspx.cs">
+      <DependentUpon>ForgotPassword.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="ForgotPassword.aspx.designer.cs">
+      <DependentUpon>ForgotPassword.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="Global.asax.cs">
+      <DependentUpon>Global.asax</DependentUpon>
+    </Compile>
+    <Compile Include="Home.aspx.cs">
+      <DependentUpon>Home.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="Home.aspx.designer.cs">
+      <DependentUpon>Home.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="Information.aspx.cs">
+      <DependentUpon>Information.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="Information.aspx.designer.cs">
+      <DependentUpon>Information.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="JpegImage.aspx.cs">
+      <DependentUpon>JpegImage.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="JpegImage.aspx.designer.cs">
+      <DependentUpon>JpegImage.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="MemberChangePassword.aspx.cs">
+      <DependentUpon>MemberChangePassword.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="MemberChangePassword.aspx.designer.cs">
+      <DependentUpon>MemberChangePassword.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="MemberLogin.aspx.cs">
+      <DependentUpon>MemberLogin.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="MemberLogin.aspx.designer.cs">
+      <DependentUpon>MemberLogin.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="MemberLogout.aspx.cs">
+      <DependentUpon>MemberLogout.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="MemberLogout.aspx.designer.cs">
+      <DependentUpon>MemberLogout.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="MemberRegistration.aspx.cs">
+      <DependentUpon>MemberRegistration.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="MemberRegistration.aspx.designer.cs">
+      <DependentUpon>MemberRegistration.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="MemberVerification.aspx.cs">
+      <DependentUpon>MemberVerification.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="MemberVerification.aspx.designer.cs">
+      <DependentUpon>MemberVerification.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="MemberWelcome.aspx.cs">
+      <DependentUpon>MemberWelcome.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="MemberWelcome.aspx.designer.cs">
+      <DependentUpon>MemberWelcome.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="PaymentRequest.aspx.cs">
+      <DependentUpon>PaymentRequest.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="PaymentRequest.aspx.designer.cs">
+      <DependentUpon>PaymentRequest.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="PaymentResponse.aspx.cs">
+      <DependentUpon>PaymentResponse.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="PaymentResponse.aspx.designer.cs">
+      <DependentUpon>PaymentResponse.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="Response.aspx.cs">
+      <DependentUpon>Response.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="Response.aspx.designer.cs">
+      <DependentUpon>Response.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="UpdateAddressDetails.aspx.cs">
+      <DependentUpon>UpdateAddressDetails.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="UpdateAddressDetails.aspx.designer.cs">
+      <DependentUpon>UpdateAddressDetails.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="UpdateBankInfo.aspx.cs">
+      <DependentUpon>UpdateBankInfo.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="UpdateBankInfo.aspx.designer.cs">
+      <DependentUpon>UpdateBankInfo.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="UpdateBasicInfo.aspx.cs">
+      <DependentUpon>UpdateBasicInfo.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="UpdateBasicInfo.aspx.designer.cs">
+      <DependentUpon>UpdateBasicInfo.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="UpdateGSTDetails.aspx.cs">
+      <DependentUpon>UpdateGSTDetails.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="UpdateGSTDetails.aspx.designer.cs">
+      <DependentUpon>UpdateGSTDetails.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="UpdateNomineeDetails.aspx.cs">
+      <DependentUpon>UpdateNomineeDetails.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="UpdateNomineeDetails.aspx.designer.cs">
+      <DependentUpon>UpdateNomineeDetails.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="UpdateProfile.aspx.cs">
+      <DependentUpon>UpdateProfile.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="UpdateProfile.aspx.designer.cs">
+      <DependentUpon>UpdateProfile.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="User_Controls\PopulateDropDown.asmx.cs">
+      <DependentUpon>PopulateDropDown.asmx</DependentUpon>
+      <SubType>Component</SubType>
+    </Compile>
+    <Compile Include="User_Controls\UCDocUpload.ascx.cs">
+      <DependentUpon>UCDocUpload.ascx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="User_Controls\UCDocUpload.ascx.designer.cs">
+      <DependentUpon>UCDocUpload.ascx</DependentUpon>
+    </Compile>
+    <Compile Include="User_Controls\ucDropDown.ascx.cs">
+      <DependentUpon>ucDropDown.ascx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="User_Controls\ucDropDown.ascx.designer.cs">
+      <DependentUpon>ucDropDown.ascx</DependentUpon>
+    </Compile>
+    <Compile Include="User_Controls\ucMemberChangePassword.ascx.cs">
+      <DependentUpon>ucMemberChangePassword.ascx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="User_Controls\ucMemberChangePassword.ascx.designer.cs">
+      <DependentUpon>ucMemberChangePassword.ascx</DependentUpon>
+    </Compile>
+    <Compile Include="User_Controls\ucMemberLogin.ascx.cs">
+      <DependentUpon>ucMemberLogin.ascx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="User_Controls\ucMemberLogin.ascx.designer.cs">
+      <DependentUpon>ucMemberLogin.ascx</DependentUpon>
+    </Compile>
+    <Compile Include="User_Controls\ucNomineeDetails.ascx.cs">
+      <DependentUpon>ucNomineeDetails.ascx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="User_Controls\ucNomineeDetails.ascx.designer.cs">
+      <DependentUpon>ucNomineeDetails.ascx</DependentUpon>
+    </Compile>
+    <Compile Include="User_Controls\ucTooltip.ascx.cs">
+      <DependentUpon>ucTooltip.ascx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="User_Controls\ucTooltip.ascx.designer.cs">
+      <DependentUpon>ucTooltip.ascx</DependentUpon>
+    </Compile>
+    <Compile Include="App_Code\clsCryptography.cs" />
+    <Compile Include="App_Code\DocumentPageEventHelper.cs" />
+    <Compile Include="App_Code\DSIT_DataLayer.cs" />
+    <Compile Include="App_Code\GeneralFunction.cs" />
+    <Compile Include="GetHostPath.aspx.cs">
+      <DependentUpon>GetHostPath.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="GetHostPath.aspx.designer.cs">
+      <DependentUpon>GetHostPath.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="ViewSwitcher.ascx.cs">
+      <DependentUpon>ViewSwitcher.ascx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="ViewSwitcher.ascx.designer.cs">
+      <DependentUpon>ViewSwitcher.ascx</DependentUpon>
+    </Compile>
+    <Compile Include="WebForm2.aspx.cs">
+      <DependentUpon>WebForm2.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="WebForm2.aspx.designer.cs">
+      <DependentUpon>WebForm2.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="WebForm3.aspx.cs">
+      <DependentUpon>WebForm3.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="WebForm3.aspx.designer.cs">
+      <DependentUpon>WebForm3.aspx</DependentUpon>
+    </Compile>
+    <Content Include="App_Code\PageStateAdapter.cs" />
+    <Compile Include="App_Reports\App_CheckList.aspx.cs">
+      <DependentUpon>App_CheckList.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="App_Reports\App_CheckList.aspx.designer.cs">
+      <DependentUpon>App_CheckList.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="Properties\AssemblyInfo.cs" />
+    <Content Include="Javascript\jquery\jquery.min.map" />
+  </ItemGroup>
+  <ItemGroup>
+    <Folder Include="App_Data\Cache\" />
+    <Folder Include="App_Updates\Release_R2_0\" />
+    <Folder Include="MemberPhoto\" />
+  </ItemGroup>
+  <ItemGroup>
+    <WCFMetadata Include="Service References\" />
+  </ItemGroup>
+  <PropertyGroup>
+    <VisualStudioVersion Condition="'$(VisualStudioVersion)' == ''">10.0</VisualStudioVersion>
+    <VSToolsPath Condition="'$(VSToolsPath)' == ''">$(MSBuildExtensionsPath32)\Microsoft\VisualStudio\v$(VisualStudioVersion)</VSToolsPath>
+  </PropertyGroup>
+  <Import Project="$(MSBuildBinPath)\Microsoft.CSharp.targets" />
+  <Import Project="$(VSToolsPath)\WebApplications\Microsoft.WebApplication.targets" Condition="'$(VSToolsPath)' != ''" />
+  <Import Project="$(MSBuildExtensionsPath32)\Microsoft\VisualStudio\v10.0\WebApplications\Microsoft.WebApplication.targets" Condition="false" />
+  <ProjectExtensions>
+    <VisualStudio>
+      <FlavorProperties GUID="{349c5851-65df-11da-9384-00065b846f21}">
+        <WebProjectProperties>
+          <UseIIS>True</UseIIS>
+          <AutoAssignPort>True</AutoAssignPort>
+          <DevelopmentServerPort>65288</DevelopmentServerPort>
+          <DevelopmentServerVPath>/</DevelopmentServerVPath>
+          <IISUrl>http://localhost:65288/</IISUrl>
+          <NTLMAuthentication>False</NTLMAuthentication>
+          <UseCustomServer>False</UseCustomServer>
+          <CustomServerUrl>
+          </CustomServerUrl>
+          <SaveServerSettingsInUserFile>False</SaveServerSettingsInUserFile>
+        </WebProjectProperties>
+      </FlavorProperties>
+    </VisualStudio>
+  </ProjectExtensions>
+  <Target Name="EnsureNuGetPackageBuildImports" BeforeTargets="PrepareForBuild">
+    <PropertyGroup>
+      <ErrorText>This project references NuGet package(s) that are missing on this computer. Use NuGet Package Restore to download them.  For more information, see http://go.microsoft.com/fwlink/?LinkID=322105. The missing file is {0}.</ErrorText>
+    </PropertyGroup>
+    <Error Condition="!Exists('..\packages\Microsoft.ApplicationInsights.DependencyCollector.2.21.0\build\Microsoft.ApplicationInsights.DependencyCollector.targets')" Text="$([System.String]::Format('$(ErrorText)', '..\packages\Microsoft.ApplicationInsights.DependencyCollector.2.21.0\build\Microsoft.ApplicationInsights.DependencyCollector.targets'))" />
+    <Error Condition="!Exists('..\packages\Microsoft.ApplicationInsights.PerfCounterCollector.2.21.0\build\Microsoft.ApplicationInsights.PerfCounterCollector.targets')" Text="$([System.String]::Format('$(ErrorText)', '..\packages\Microsoft.ApplicationInsights.PerfCounterCollector.2.21.0\build\Microsoft.ApplicationInsights.PerfCounterCollector.targets'))" />
+    <Error Condition="!Exists('..\packages\Microsoft.ApplicationInsights.WindowsServer.TelemetryChannel.2.21.0\build\Microsoft.ApplicationInsights.WindowsServer.TelemetryChannel.targets')" Text="$([System.String]::Format('$(ErrorText)', '..\packages\Microsoft.ApplicationInsights.WindowsServer.TelemetryChannel.2.21.0\build\Microsoft.ApplicationInsights.WindowsServer.TelemetryChannel.targets'))" />
+    <Error Condition="!Exists('..\packages\Microsoft.ApplicationInsights.WindowsServer.2.21.0\build\Microsoft.ApplicationInsights.WindowsServer.targets')" Text="$([System.String]::Format('$(ErrorText)', '..\packages\Microsoft.ApplicationInsights.WindowsServer.2.21.0\build\Microsoft.ApplicationInsights.WindowsServer.targets'))" />
+    <Error Condition="!Exists('..\packages\Microsoft.ApplicationInsights.Web.2.21.0\build\Microsoft.ApplicationInsights.Web.targets')" Text="$([System.String]::Format('$(ErrorText)', '..\packages\Microsoft.ApplicationInsights.Web.2.21.0\build\Microsoft.ApplicationInsights.Web.targets'))" />
+    <Error Condition="!Exists('..\packages\Microsoft.Net.Compilers.4.2.0\build\Microsoft.Net.Compilers.props')" Text="$([System.String]::Format('$(ErrorText)', '..\packages\Microsoft.Net.Compilers.4.2.0\build\Microsoft.Net.Compilers.props'))" />
+    <Error Condition="!Exists('..\packages\Microsoft.CodeDom.Providers.DotNetCompilerPlatform.1.0.0\build\Microsoft.CodeDom.Providers.DotNetCompilerPlatform.props')" Text="$([System.String]::Format('$(ErrorText)', '..\packages\Microsoft.CodeDom.Providers.DotNetCompilerPlatform.1.0.0\build\Microsoft.CodeDom.Providers.DotNetCompilerPlatform.props'))" />
+  </Target>
+  <Import Project="..\packages\Microsoft.ApplicationInsights.DependencyCollector.2.21.0\build\Microsoft.ApplicationInsights.DependencyCollector.targets" Condition="Exists('..\packages\Microsoft.ApplicationInsights.DependencyCollector.2.21.0\build\Microsoft.ApplicationInsights.DependencyCollector.targets')" />
+  <Import Project="..\packages\Microsoft.ApplicationInsights.PerfCounterCollector.2.21.0\build\Microsoft.ApplicationInsights.PerfCounterCollector.targets" Condition="Exists('..\packages\Microsoft.ApplicationInsights.PerfCounterCollector.2.21.0\build\Microsoft.ApplicationInsights.PerfCounterCollector.targets')" />
+  <Import Project="..\packages\Microsoft.ApplicationInsights.WindowsServer.TelemetryChannel.2.21.0\build\Microsoft.ApplicationInsights.WindowsServer.TelemetryChannel.targets" Condition="Exists('..\packages\Microsoft.ApplicationInsights.WindowsServer.TelemetryChannel.2.21.0\build\Microsoft.ApplicationInsights.WindowsServer.TelemetryChannel.targets')" />
+  <Import Project="..\packages\Microsoft.ApplicationInsights.WindowsServer.2.21.0\build\Microsoft.ApplicationInsights.WindowsServer.targets" Condition="Exists('..\packages\Microsoft.ApplicationInsights.WindowsServer.2.21.0\build\Microsoft.ApplicationInsights.WindowsServer.targets')" />
+  <Import Project="..\packages\Microsoft.ApplicationInsights.Web.2.21.0\build\Microsoft.ApplicationInsights.Web.targets" Condition="Exists('..\packages\Microsoft.ApplicationInsights.Web.2.21.0\build\Microsoft.ApplicationInsights.Web.targets')" />
+  <!-- To modify your build process, add your task inside one of the targets below and uncomment it. 
+       Other similar extension points exist, see Microsoft.Common.targets.
+  <Target Name="BeforeBuild">
+  </Target>
+  <Target Name="AfterBuild">
+  </Target>
+  -->
+</Project>

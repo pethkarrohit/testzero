@@ -1,0 +1,194 @@
+div.zcCalendar
+{
+	position: relative;
+	z-index: 0;
+}
+
+.zcCalendar .ajax__calendar_container
+{
+	background-color:#DBAD5F;
+	border: solid 1px #cccccc;
+	font-family: Arial, Helvetica, sans-serif;
+	cursor: default;
+	width: 205px;
+	font-size: 11px;
+	text-align: center;
+	padding: 0px;
+}
+
+.zcCalendar .ajax__calendar_body
+{
+	height: 136px;
+	width: 205px;
+	position: relative;
+	overflow: hidden;
+	background-color:#B9D8EF;
+	top: 0px;
+	left: 0px;
+	right: 0px;
+}
+
+.zcCalendar .ajax__calendar_days, .zcCalendar .ajax__calendar_months, .zcCalendar .ajax__calendar_years
+{
+	top: 0px;
+	left: 0px;
+	right: 0px;
+	height: 136px;
+	width: 195px;
+	padding: 5px;
+	position: absolute;
+	text-align: center;
+}
+
+.zcCalendar .ajax__calendar_days table
+{
+	border-spacing: 0;
+	border-collapse: collapse;
+	font: 100% Arial, Helvetica, sans-serif;
+	text-align: center;
+}
+
+.zcCalendar .ajax__calendar_header
+{
+	padding-top: 4px;
+	height: 15px;
+}
+
+.zcCalendar .ajax__calendar_prev
+{
+	margin-left: 0px;
+	margin-top: 3px;
+	display: block;
+	cursor: pointer;
+	float: left;
+}
+
+.zcCalendar .ajax__calendar_next
+{
+	margin-top: 2px;
+	margin-right: 0px;
+	margin-left: 0px;
+	display: block;
+	cursor: pointer;
+	float: right;
+}
+
+.zcCalendar .ajax__calendar_title
+{
+	cursor: pointer;
+	text-align: center;
+	font-weight: 600;
+	font-size: 12px;
+	color: #fff;
+	font-family: Arial, Helvetica, sans-serif;
+}
+
+.zcCalendar .ajax__calendar_footer, .zcCalendar .ajax__calendar_today
+{
+	padding-top: 4px;
+	height: 20px;
+	cursor: pointer;
+	text-align: center;
+	font-weight: 600;
+	font-size: 12px;
+	color: #fff;
+	font-family: Arial, Helvetica, sans-serif;
+}
+
+.zcCalendar .ajax__calendar_dayname
+{
+	padding-left: 3px;
+	padding-right: 3px;
+	margin-bottom: 5px;
+	margin-left: 2px;
+	margin-right: 2px;
+	text-align: center;
+	font-weight: 700;
+	font-size: 10px;
+	color: #000;
+	border-bottom: solid 1px #a6a6a6;
+}
+
+.zcCalendar .ajax__calendar_day, .zcCalendar .ajax__calendar_month, .zcCalendar .ajax__calendar_year
+{
+	padding: 0px;
+	color: #000;
+	text-align: center;
+	padding: 0pt 2px;
+	font-weight: 600;
+	font-size: 10px;
+	font-family: Arial, Helvetica, sans-serif;
+}
+
+.zcCalendar .ajax__calendar_hover .ajax__calendar_day, .zcCalendar .ajax__calendar_hover .ajax__calendar_month, .zcCalendar .ajax__calendar_hover .ajax__calendar_year
+{
+	color: #0066cc;
+	text-align: center;
+	font-weight: 600;
+	font-size: 12px;
+	font-family: Arial, Helvetica, sans-serif;
+}
+
+.zcCalendar .ajax__calendar_other .ajax__calendar_day, .zcCalendar .ajax__calendar_other .ajax__calendar_year
+{
+	color: #a6a6a6;
+	text-align: center;
+	font-weight: 600;
+	font-size: 10px;
+	font-family: Arial, Helvetica, sans-serif;
+}
+
+.zcCalendar .ajax__calendar_active .ajax__calendar_day
+{
+	color: #0066cc;
+	text-align: center;
+	font-weight: 600;
+	font-size: 12px;
+	font-family: Arial, Helvetica, sans-serif;
+	border: solid 1px #336799;
+}
+
+.zcCalendar TH
+{
+	padding-right: 0px;
+	padding-left: 0px;
+	font-weight: bold;
+	font-size: 9px;
+	background: #cccccc;
+	padding-bottom: 0px;
+	margin: 0px;
+	vertical-align: middle;
+	color: #908070;
+	padding-top: 0px;
+}
+.zcCalendar TD
+{
+	padding-right: 0px;
+	padding-left: 0px;
+	font-weight: bold;
+	font-size: 9px;
+	background: #cccccc;
+	padding-bottom: 0px;
+	margin: 0px;
+	vertical-align: middle;
+	color: #666666;
+	padding-top: 0px;
+}
+.zcCalendar .ajax__calendar_container
+{
+	border: 1px solid #646464;
+	background-color:#2399ED;
+	color: #9999ff;
+	font-size: 8pt;
+	font-family: Verdana, 'Colonna MT';
+}
+
+.zcCalendar .ajax__calendar_body table tr td
+{
+	padding: 0px;
+	color: #10377c;
+	background-color: #ffffff;
+}
+
+
+

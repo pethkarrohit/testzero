@@ -1,0 +1,8 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<preserve resultType="2" virtualPath="/App_Browsers/" hash="3763d3ed" filehash="16312b004fbf7be7" flags="110000" assembly="App_Browsers" type="ASP.ApplicationBrowserCapabilitiesFactory">
+    <filedeps>
+        <filedep name="/App_Browsers/chrome.browser" />
+        <filedep name="/App_Browsers/ie.browser" />
+        <filedep name="/App_Browsers/PageStateAdapter.browser" />
+    </filedeps>
+</preserve>

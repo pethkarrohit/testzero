@@ -1,0 +1,27 @@
+IPRS MEMBER PROJECT & LIC Back office Project
+
+** Points required by Client
+
+1. IPI no on member registration on Form.
+2. IPI no on Update profile on Form.
+3. IPI number should be display for LHN & LH member in read only.
+4. In PDF file view, in the section of Bank Info Name of Account holder should display.
+5. In the member detail, Whatsup Mobile will be replaced with What’s Apps Mobile
+6. If the member will search for Deceased Member, there are not any message popup after clicking on validate button.(IF THE MEMER NOT FOUND.)
+
+7. Add of account holder name field in Bank info section 
+8. In the review application pdf, In the Bank section (FirstName + Last Name) should display in the Account Name, if selected.
+
+9. Before level approve, comments are mendetory.
+
+
+** Points changed & worked by
+
+1. In the member detail, Whatsup Mobile will be replaced with What’s Apps Mobile.
+2. In the Document Upload of member nominee details will not ask.  
+3. Nominee information will not display on Application web Page for the details fill up.
+4. Nominee information will not display on any type of PDF file, like Review Application & View Application.
+5. In the Document Upload of member nominee details will not ask.
+6. In the member detail, Whatsup Mobile will be replaced with What’s Apps Mobile.
+7. Change the contents and required or not filed in Document Upload section.
+8. Add document Info in pdf file.

@@ -1,0 +1,274 @@
+﻿<%@ Master Language="C#" AutoEventWireup="true" CodeBehind="ApplicationMember.Master.cs" Inherits="IPRS_Member.ApplicationMember" %>
+
+<!DOCTYPE html>
+
+<html xmlns="http://www.w3.org/1999/xhtml">
+<head runat="server">
+    <meta http-equiv="Content-Type" content="text/html; charset=UTF-8" />
+    <!-- Meta, title, CSS, favicons, etc. -->
+    <meta charset="utf-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <title></title>
+    <asp:ContentPlaceHolder ID="head" runat="server">
+    </asp:ContentPlaceHolder>
+    <!-- Bootstrap -->
+    <link href="Style/bootstrap.min.css" rel="stylesheet" />
+    <!-- Font Awesome -->
+    <link href="Style/font-awesome/font-awesome.min.css" rel="stylesheet" />
+    <!-- NProgress -->
+    <link href="Style/nprogress.css" rel="stylesheet" />
+    <!-- iCheck -->
+    <link href="Style/skins/flat/green.css" rel="stylesheet" />
+    <!-- bootstrap-progressbar -->
+    <link href="Style/bootstrap-progressbar-3.3.4.min.css" rel="stylesheet" />
+    <!-- Datatables -->
+    <link href="Style/GridView/dataTables.bootstrap.min.css" rel="stylesheet" />
+    <link href="Style/GridView/buttons.bootstrap.min.css" rel="stylesheet" />
+    <link href="Style/GridView/fixedHeader.bootstrap.min.css" rel="stylesheet" />
+    <link href="Style/GridView/responsive.bootstrap.min.css" rel="stylesheet" />
+    <link href="Style/GridView/scroller.bootstrap.min.css" rel="stylesheet" />
+    <link href="Style/modalPopup.css" rel="stylesheet" />
+    <!-- Custom Theme Style -->
+    <link href="Style/custom.min.css" rel="stylesheet" />
+    <script src="Javascript/moment.min.js"></script>
+
+    <!-- LOADING IMAGE STYLE SHEET-->
+    <link href="Style/LoadingDiv.css" rel="stylesheet" />
+    <!-- LOADING IMAGE STYLE SHEET-->
+
+    <!-- LOADING IMAGE SCRIPT-->
+    <script>
+        window.onload = function () {
+            document.getElementById("bg_load").style.display = "none";
+            document.getElementById("wrapper").style.display = "none";
+            document.getElementById("hdnScreenWidth").value = $(document).width();
+            document.getElementById("hdnScreenHeight").value = $(document).height();
+        }
+
+        function DisplayLoadingDiv() {
+            document.getElementById("bg_load").style.display = "";
+            document.getElementById("wrapper").style.display = "";
+        }
+
+    </script>
+    <!-- LOADING IMAGE SCRIPT-->
+    <script type="text/javascript" lang="JavaScript">
+
+
+
+        <!--THIS FUNCTION IS TO RESTRICT MAX WITH NUMBER TYPE TEXT BOX-->
+    function maxLengthCheck(object, MaxLength) {
+        if (object.value.length == MaxLength && event.keyCode != 8 && event.keyCode != 46 && event.keyCode != 37 && event.keyCode != 39)
+            object.value = object.value.slice(0, object.maxLength);
+    }
+    </script>
+
+    <!--TTHIS FUNCTION IS TO RESTRICT  ENTER EKY FORM SUMISSION -->
+    <script type="text/javascript">
+        window.addEventListener('keydown', function (e) {
+            if (e.keyIdentifier == 'U+000A' || e.keyIdentifier == 'Enter' || e.keyCode == 13) {
+                if (e.target.nodeName == 'INPUT' && e.target.type == 'text') {
+                    e.preventDefault();
+                    return false;
+                }
+            }
+        }, true);
+
+
+        var confirmed = false;
+        function ConfirmDelete(controlID) {
+            if (confirmed) { return true; }
+
+            bootbox.confirm("ARE YOUR SURE YOU WANT TO DELETE RECORDS?", function (result) {
+                if (result) {
+                    if (controlID != null) {
+                        var controlToClick = document.getElementById(controlID);
+                        if (controlToClick != null) {
+                            confirmed = true;
+                            controlToClick.click();
+                            confirmed = false;
+                        }
+                    }
+                }
+
+            });
+
+            return false;
+
+        }
+    </script>
+
+    <style> .loadingmodal {
+            position: fixed;
+            z-index: 999 !important;
+            height: 100%;
+            width: 100%;
+            top: 0;
+            background-color: Black;
+            filter: alpha(opacity=60);
+            opacity: 0.8;
+            -moz-opacity: 1;
+        }
+
+        .loadingcenter {
+            z-index: 1000 !important;
+            width: 200px;
+            height: 100px;
+            position: absolute;
+            left: 45%;
+            top: 60%;
+            margin-left: -150px;
+            margin-top: -150px;
+            opacity: 1;
+            /*-moz-opacity: 1;*/
+            background: url("Images/loading.gif") no-repeat;
+        }</style>
+
+</head>
+
+<body class="nav-md" style="margin: 0;">
+    <form id="form1" runat="server" method="post">
+        <div id="myDiv" class="container body" runat="server">
+            <div class="main_container">
+          <%--      <div class="col-md-3 left_col" id="divLeftMenu" runat="server">
+                    <div class="left_col scroll-view">
+                        <div class="navbar nav_title" style="border: 0;">
+                            <div class="profile">
+                                <img src="images/Logo.png" class="profile_pic" />
+                            </div>
+                        </div>
+                       
+                        <div class="sidebar-footer hidden-small">
+                            <a data-toggle="tooltip" data-placement="top" href="Home" title="Home">
+                                <span class="fa fa-home" aria-hidden="true"></span>
+                            </a>
+                            <a data-toggle="tooltip" data-placement="top" href="MemberChangePassword.aspx" title="Change Password">
+                                <span class="fa fa-key" aria-hidden="true"></span>
+                            </a>
+                            <a data-toggle="tooltip" data-placement="top" href="Help" title="Help">
+                                <span class="fa fa-question-circle" aria-hidden="true"></span>
+                            </a>
+                            <a data-toggle="tooltip" data-placement="top" runat="server" href="LogOut" title="Log Out">
+                                <span class="fa fa-sign-out" aria-hidden="true"></span>
+                            </a>
+                        </div>
+                        <!-- /menu footer buttons -->
+                    </div>
+                </div>--%>
+
+                <!-- top navigation -->
+                <div class="top_nav" id="divtopnav" runat="server">
+                    <div class="nav_menu">
+                        <nav>
+                             <div class="navbar nav_title" style="border: 0;">
+                            <div class="profile">
+                                <img src="images/Logo.png" class="profile_pic" />
+                            </div>
+                        </div>
+                      <%--      <div class="nav toggle">
+                                <a id="menu_toggle" runat="server"><i class="fa fa-bars"></i></a>
+                            </div>--%>
+                            <ul class="nav navbar-nav navbar-right">
+                                <li>
+                                    <a href="javascript:;" class="user-profile dropdown-toggle" data-toggle="dropdown" aria-expanded="false">
+                                       <%-- <img src="images/img.jpg" alt="" />--%><i class="fa fa-user"></i>&nbsp;&nbsp;<asp:Label ID="lblUserName" runat="server"></asp:Label>
+                                        <span class="fa fa-angle-down"></span>
+                                    </a>
+                                    <ul class="dropdown-menu dropdown-usermenu pull-right">
+                                        <li><a href="MemberChangePassword"><i class="fa fa-key pull-right"></i>Change Password</a></li>
+                                        <li style="display:none"><a href="Help"><i class="fa fa-question-circle pull-right"></i>Help</a></li>
+                                        <li><a href="LogOut"><i class="fa fa-sign-out pull-right"></i>Log Out</a></li>
+                                    </ul>
+                                </li>
+                                <li>
+                                    <a href="Home" class="user-profile dropdown-toggle" >
+                                       <%-- <img src="images/img.jpg" alt="" />--%><i class="fa fa-home" style="font-size:25px"></i>
+                                    </a>
+                                    <ul class="dropdown-menu dropdown-usermenu pull-right">
+                                        <asp:Literal ID="lblBranchDetails" runat="server"></asp:Literal>
+                                    </ul>
+                                </li>
+                            </ul>
+                        </nav>
+                    </div>
+                </div>
+                <!-- /top navigation -->
+                <!-- page content -->
+                <div class="right_col" role="main">
+                    <asp:ContentPlaceHolder ID="ContentPlaceHolder1" runat="server">
+                    </asp:ContentPlaceHolder>
+                </div>
+                <!-- /page content -->
+                <!-- footer content -->
+               <%-- <footer>
+                   <%-- <div class="pull-right">
+                        <asp:Label runat="server" ID="lblCompanyName"></asp:Label>
+                    </div>--%>
+                   <%-- <div class="clearfix"></div>
+                </footer>--%>
+                <!-- /footer content -->
+            </div>
+        </div>
+
+        <!-- LOADING IMAGE DIV-->
+        <div class="bg_load" id="bg_load"></div>
+        <div class="wrapper" id="wrapper">
+            <div class="inner">
+                <span>L</span>
+                <span>o</span>
+                <span>a</span>
+                <span>d</span>
+                <span>i</span>
+                <span>n</span>
+                <span>g</span>
+            </div>
+        </div>
+        <!-- LOADING IMAGE DIV-->
+        <!-- jQuery -->
+        <asp:HiddenField ID="hdnScreenWidth" runat="server" />
+        <asp:HiddenField ID="hdnScreenHeight" runat="server" />
+        <script src="javascript/jquery/jquery.min.js"></script>
+        <!-- Bootstrap -->
+        <script src="javascript/bootstrap/bootstrap.min.js"></script>
+        <!-- Bootstrap Alert Box -->
+        <script src="javascript/bootstrap/bootbox.min.js"></script>
+        <!-- FastClick -->
+        <script src="javascript/fastclick/fastclick.js"></script>
+        <!-- NProgress -->
+        <script src="javascript/nprogress.js"></script>
+        <!-- bootstrap-progressbar -->
+        <script src="javascript/bootstrap/bootstrap-progressbar.min.js"></script>
+        <!-- iCheck -->
+        <script src="javascript/icheck.min.js"></script>
+
+        <%--     <script src="javascript/Dropdown/chosen.jquery.js"></script>--%>
+
+        <!-- Datatables -->
+        <script src="javascript/GridView/jquery.dataTables.min.js"></script>
+        <script src="javascript/GridView/dataTables.bootstrap.min.js"></script>
+        <script src="javascript/GridView/dataTables.buttons.min.js"></script>
+        <script src="javascript/GridView/buttons.bootstrap.min.js"></script>
+        <script src="javascript/GridView/buttons.flash.min.js"></script>
+        <script src="javascript/GridView/buttons.html5.min.js"></script>
+        <script src="javascript/GridView/buttons.print.min.js"></script>
+        <script src="javascript/GridView/dataTables.fixedHeader.min.js"></script>
+        <script src="javascript/GridView/dataTables.keyTable.min.js"></script>
+        <script src="javascript/GridView/dataTables.responsive.min.js"></script>
+        <script src="javascript/GridView/responsive.bootstrap.js"></script>
+        <script src="javascript/GridView/datatables.scroller.min.js"></script>
+        <script src="javascript/GridView/jszip.min.js"></script>
+        <script src="javascript/GridView/pdfmake.min.js"></script>
+        <script src="../javascript/GridView/vfs_fonts.js"></script>
+
+
+
+        <script src="../javascript/custom.min.js"></script>
+
+
+
+
+    </form>
+
+</body>
+</html>

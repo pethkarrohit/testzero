@@ -6340,7 +6340,7 @@ namespace IPRS_Member
                     {
                         ARoles = int.Parse(SDS.Tables[0].Rows[i]["Record"].ToString());
                         DAShare = double.Parse(SDS.Tables[0].Rows[i]["Share"].ToString());
-                        String AA = "Test Git";
+                       
                     }
                     else if (SDS.Tables[0].Rows[i]["RoleType"].ToString() == "C")
                     {

@@ -23,7 +23,8 @@ namespace IPRS_Member
                     {
                         divUpdateData.Visible = false;
                         divUpdateProfile.Visible = true;
-                       // divUpdateNominee.Visible = true;  
+                        // divUpdateNominee.Visible = true;
+                        string test = "ASCV";
                     }
                     else
                     {
